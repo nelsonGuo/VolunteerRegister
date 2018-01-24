@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VolunteerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="VolunteerModelStoreContainer">
+    <EntitySet Name="C__MigrationHistory" EntityType="VolunteerModel.Store.C__MigrationHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetRoles" EntityType="VolunteerModel.Store.AspNetRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserClaims" EntityType="VolunteerModel.Store.AspNetUserClaims" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserLogins" EntityType="VolunteerModel.Store.AspNetUserLogins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUsers" EntityType="VolunteerModel.Store.AspNetUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Events" EntityType="VolunteerModel.Store.Events" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Shifts" EntityType="VolunteerModel.Store.Shifts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserAlias" EntityType="VolunteerModel.Store.UserAlias" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="VolunteerModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_events_shifts" EntityType="VolunteerModel.Store.vw_events_shifts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_orgs_events_shifts" EntityType="VolunteerModel.Store.vw_orgs_events_shifts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_users_events_shifts" EntityType="VolunteerModel.Store.vw_users_events_shifts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Organizations" EntityType="VolunteerModel.Store.Organizations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserRoles" EntityType="VolunteerModel.Store.AspNetUserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserRoles1" EntityType="VolunteerModel.Store.AspNetUserRoles1" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="VolunteerModel.Store.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="VolunteerModel.Store.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shifts__eventID__1DE57479" Association="VolunteerModel.Store.FK__Shifts__eventID__1DE57479">
+      <End Role="Events" EntitySet="Events" />
+      <End Role="Shifts" EntitySet="Shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shifts__userID__1ED998B2" Association="VolunteerModel.Store.FK__Shifts__userID__1ED998B2">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Shifts" EntitySet="Shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserAlias__userI__145C0A3F" Association="VolunteerModel.Store.FK__UserAlias__userI__145C0A3F">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserAlias" EntitySet="UserAlias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles" Association="VolunteerModel.Store.FK_AspNetUserRoles_AspNetRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="VolunteerModel.Store.FK_AspNetUserRoles_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Events__orgID__6B24EA82" Association="VolunteerModel.Store.FK__Events__orgID__6B24EA82">
+      <End Role="Organization" EntitySet="Organizations" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles1_AspNetRole" Association="VolunteerModel.Store.FK_AspNetUserRoles1_AspNetRole">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles1" EntitySet="AspNetUserRoles1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles1_AspNetUser" Association="VolunteerModel.Store.FK_AspNetUserRoles1_AspNetUser">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles1" EntitySet="AspNetUserRoles1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="ContextKey" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ClaimType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ProviderKey" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" Nullable="true" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="eventID" />
+    </Key>
+    <Property Name="eventID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="eventName" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="eventInfo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="eventDate" Type="datetime" Nullable="true" />
+    <Property Name="eventStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventSetupTime" Type="datetime" Nullable="true" />
+    <Property Name="eventTeardownTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionSlots" Type="int" Nullable="true" />
+    <Property Name="eventFrontDeskStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventFrontDeskEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventFrontDeskSlots" Type="int" Nullable="true" />
+    <Property Name="orgID" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Shifts">
+    <Key>
+      <PropertyRef Name="shiftID" />
+    </Key>
+    <Property Name="shiftID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="shiftStartTime" Type="datetime" Nullable="true" />
+    <Property Name="shiftEndTime" Type="datetime" Nullable="true" />
+    <Property Name="shiftCredit" Type="int" Nullable="true" />
+    <Property Name="shiftType" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="eventID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="userID" Type="nvarchar" Nullable="true" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="UserAlias">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="alias" />
+    </Key>
+    <Property Name="userID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="alias" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="userEmail" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="membershipNo" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="userFetURL" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="userTotalCredits" Type="int" Nullable="true" />
+    <Property Name="userCreditsUserd" Type="int" Nullable="true" />
+    <Property Name="adminComments" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="vw_events_shifts">
+    <Key>
+      <PropertyRef Name="eventID" />
+      <PropertyRef Name="orgID" />
+      <PropertyRef Name="shiftID" />
+    </Key>
+    <Property Name="eventID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="eventName" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="eventInfo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="eventDate" Type="datetime" Nullable="true" />
+    <Property Name="eventStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventSetupTime" Type="datetime" Nullable="true" />
+    <Property Name="eventTeardownTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionSlots" Type="int" Nullable="true" />
+    <Property Name="eventFrontDeskStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventFrontDeskEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventFrontDeskSlots" Type="int" Nullable="true" />
+    <Property Name="orgID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="shiftID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="shiftType" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="shiftStartTime" Type="datetime" Nullable="true" />
+    <Property Name="shiftEndTime" Type="datetime" Nullable="true" />
+    <Property Name="shiftCredit" Type="int" Nullable="true" />
+    <Property Name="userID" Type="nvarchar" Nullable="true" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="vw_orgs_events_shifts">
+    <Key>
+      <PropertyRef Name="eventID" />
+      <PropertyRef Name="orgID" />
+      <PropertyRef Name="shiftID" />
+    </Key>
+    <Property Name="eventID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="eventName" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="eventInfo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="eventDate" Type="datetime" Nullable="true" />
+    <Property Name="eventStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventSetupTime" Type="datetime" Nullable="true" />
+    <Property Name="eventTeardownTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionSlots" Type="int" Nullable="true" />
+    <Property Name="eventFrontDeskStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventFrontDeskEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventFrontDeskSlots" Type="int" Nullable="true" />
+    <Property Name="orgID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="shiftID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="shiftType" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="shiftStartTime" Type="datetime" Nullable="true" />
+    <Property Name="shiftEndTime" Type="datetime" Nullable="true" />
+    <Property Name="shiftCredit" Type="int" Nullable="true" />
+    <Property Name="userID" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="orgName" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="orgPhone" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="orgEmail" Type="nvarchar" Nullable="true" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="vw_users_events_shifts">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="userEmail" />
+      <PropertyRef Name="alias" />
+      <PropertyRef Name="eventID" />
+      <PropertyRef Name="orgID" />
+      <PropertyRef Name="shiftID" />
+    </Key>
+    <Property Name="userID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="userEmail" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="membershipNo" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="userFetURL" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="userTotalCredits" Type="int" Nullable="true" />
+    <Property Name="userCreditsUserd" Type="int" Nullable="true" />
+    <Property Name="adminComments" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="alias" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="eventID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="eventName" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="eventInfo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="eventDate" Type="datetime" Nullable="true" />
+    <Property Name="eventStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventSetupTime" Type="datetime" Nullable="true" />
+    <Property Name="eventTeardownTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventConcessionSlots" Type="int" Nullable="true" />
+    <Property Name="eventFrontDeskStartTime" Type="datetime" Nullable="true" />
+    <Property Name="eventFrontDeskEndTime" Type="datetime" Nullable="true" />
+    <Property Name="eventFrontDeskSlots" Type="int" Nullable="true" />
+    <Property Name="orgID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="shiftID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="shiftType" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="shiftStartTime" Type="datetime" Nullable="true" />
+    <Property Name="shiftEndTime" Type="datetime" Nullable="true" />
+    <Property Name="shiftCredit" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Organizations">
+    <Key>
+      <PropertyRef Name="orgID" />
+    </Key>
+    <Property Name="orgID" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="orgEmail" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="orgPhone" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="AspNetRoles_Id" />
+      <PropertyRef Name="AspNetUsers_Id" />
+    </Key>
+    <Property Name="AspNetRoles_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="AspNetUsers_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles1">
+    <Key>
+      <PropertyRef Name="AspNetRoles1_Id" />
+      <PropertyRef Name="AspNetUsers1_Id" />
+    </Key>
+    <Property Name="AspNetRoles1_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="AspNetUsers1_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="VolunteerModel.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="VolunteerModel.Store.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="VolunteerModel.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="VolunteerModel.Store.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shifts__eventID__1DE57479">
+    <End Role="Events" Type="VolunteerModel.Store.Events" Multiplicity="1" />
+    <End Role="Shifts" Type="VolunteerModel.Store.Shifts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Events">
+        <PropertyRef Name="eventID" />
+      </Principal>
+      <Dependent Role="Shifts">
+        <PropertyRef Name="eventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shifts__userID__1ED998B2">
+    <End Role="Users" Type="VolunteerModel.Store.Users" Multiplicity="0..1" />
+    <End Role="Shifts" Type="VolunteerModel.Store.Shifts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Shifts">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserAlias__userI__145C0A3F">
+    <End Role="Users" Type="VolunteerModel.Store.Users" Multiplicity="1" />
+    <End Role="UserAlias" Type="VolunteerModel.Store.UserAlias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="UserAlias">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Events__orgID__6B24EA82">
+    <End Role="Organization" Type="VolunteerModel.Store.Organizations" Multiplicity="1" />
+    <End Role="Event" Type="VolunteerModel.Store.Events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="orgID" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="orgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetRoles">
+    <End Role="AspNetRoles" Type="VolunteerModel.Store.AspNetRoles" Multiplicity="1" />
+    <End Role="AspNetUserRoles" Type="VolunteerModel.Store.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="AspNetRoles_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetUsers">
+    <End Role="AspNetUserRoles" Type="VolunteerModel.Store.AspNetUserRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="VolunteerModel.Store.AspNetUsers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="AspNetUsers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles1_AspNetRole">
+    <End Role="AspNetRole" Type="VolunteerModel.Store.AspNetRoles" Multiplicity="1" />
+    <End Role="AspNetUserRoles1" Type="VolunteerModel.Store.AspNetUserRoles1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles1">
+        <PropertyRef Name="AspNetRoles1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles1_AspNetUser">
+    <End Role="AspNetUserRoles1" Type="VolunteerModel.Store.AspNetUserRoles1" Multiplicity="*" />
+    <End Role="AspNetUser" Type="VolunteerModel.Store.AspNetUsers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles1">
+        <PropertyRef Name="AspNetUsers1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

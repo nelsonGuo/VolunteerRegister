@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b661fffdda149d2a2edb4eacb43e164" Name="Diagram1">
+        <EntityTypeShape EntityType="VolunteerModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.Event" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.Shift" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.UserAlia" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.User" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.vw_events_shifts" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.vw_orgs_events_shifts" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VolunteerModel.vw_users_events_shifts" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="VolunteerModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteerModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteerModel.FK__Shifts__eventID__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteerModel.FK__Shifts__userID__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteerModel.FK__UserAlias__userI__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="VolunteerModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VolunteerModel.Organization" Width="1.5" PointX="0.75" PointY="17.75" />
+        <AssociationConnector Association="VolunteerModel.FK__Events__orgID__6B24EA82" />
+        <AssociationConnector Association="VolunteerModel.AspNetUserRoles1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
